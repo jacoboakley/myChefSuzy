@@ -4,27 +4,40 @@ import styled from 'styled-components'
 
 
 const HeaderWrapper = styled.div `
-  align-itemes: center;
-  background: transparent;
+  align-items: center;
   display: flex;
-  height: 15%;
   justify-content: space-between;
   width: 100%;
+  
+  background-color: rgba(33,33,33,.3);
+
+  h1 {
+    margin: 0;
+    padding: .5rem;
+  }
 `
+
+const StyledLink = styled(Link)`
+  padding: .75rem;
+
+  color: #DDA0DD;
+  text-decoration: none;
+  text-shadow: -2px 1px 0px rgba(0, 0, 0, 1);
+`;
 
 const Header = ({ siteTitle }) => (
   <HeaderWrapper>
     <div>
       <h1>
-        <Link to='/'>
+        <StyledLink to='/'>
           {siteTitle}
-        </Link>
+        </StyledLink>
       </h1>
     </div>
     <div>
-      <Link to='/about/'>ABOUT</Link>
-      <Link to='/menu/'>MENU</Link>
-      <Link to='/contact/'>CONTACT</Link>
+      <StyledLink to='/about/'>ABOUT</StyledLink>
+      <StyledLink to='/menu/'>MENU</StyledLink>
+      <StyledLink to='/contact/'>CONTACT</StyledLink>
     </div>
   </HeaderWrapper>
 )
